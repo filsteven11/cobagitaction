@@ -1,0 +1,27 @@
+name: Go Profiling
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  profiling:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Go Environment
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.21.6'  # Ganti dengan versi Go yang Anda gunakan
+
+      - name: Install pprof
+        run: go get -u github.com/google/pprof
+
+      - name: Run Your Go Application
+        run: go run apa.go  
+
+      - name: Start Profiling
+        run: pprof --pdf ./mytest./profile.prof
