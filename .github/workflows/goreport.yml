@@ -1,0 +1,5 @@
+checks:
+  - linters
+  - gofmt
+  - govet
+  - staticcheck
