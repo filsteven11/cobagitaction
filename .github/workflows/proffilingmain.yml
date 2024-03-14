@@ -24,7 +24,7 @@ jobs:
         run: go run main.go  # Ganti dengan perintah yang sesuai untuk menjalankan aplikasi Go Anda
 
       - name: Start Profiling
-        run: pprof --pdf ./mybinary ./profile.prof  # Ganti mybinary dengan nama binary Anda
+        run: pprof --pdf ./githubaction ./profile.prof  # Ganti mybinary dengan nama binary Anda
 
       - name: Save Profile
         if: always()
