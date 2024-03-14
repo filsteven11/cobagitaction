@@ -3,10 +3,10 @@ name: Go Vet
 on:
   push:
     branches:
-      - main
+      - main 
   pull_request:
     branches:
-      - main
+      - main  
 
 jobs:
   go-vet:
@@ -20,8 +20,10 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v2
         with:
-          go-version: 1.21.6
+          go-version:  1.21.6 #versi go nya
+
+      - name: Initialize Go Modules
+        run: go mod download
 
       - name: Run go vet
-        run: go vet main
-        
+        run: go vet main.go
