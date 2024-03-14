@@ -20,12 +20,13 @@ jobs:
       - name: Install pprof
         run: go get -u github.com/google/pprof
 
-      - name: Run Your Go Application
-        run: go run main.go  # Ganti dengan perintah yang sesuai untuk menjalankan aplikasi Go Anda
+      - name: Build Your Go Application
+        run: go build -o githubaction main.go  # Ganti dengan perintah yang sesuai untuk membangun aplikasi Go Anda
 
       - name: Start Profiling
-        run: pprof --pdf ./githubaction ./profile.prof  # Ganti mybinary dengan nama binary Anda
+        run: pprof --pdf ./githubaction ./profile.prof  # Ganti githubaction dengan nama binary Anda
 
+      # Optional: Jika Anda ingin menyimpan hasil profiling sebagai artefak
       - name: Save Profile
         if: always()
         uses: actions/upload-artifact@v2
