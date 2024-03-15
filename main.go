@@ -6,4 +6,5 @@ import "fmt"
 func main() {
 	fmt.Println("Hello, World!")
 	fmt.Println("siapa aku ya ?")
+	a=b-c
 }
