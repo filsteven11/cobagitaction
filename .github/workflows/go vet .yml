@@ -26,4 +26,5 @@ jobs:
         run: go mod download
 
       - name: Run go vet
-        run: go vet main
+        run: go vet main.go
+        
